@@ -3,328 +3,476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA-Рай | Салон красоты и здоровья в Майкопе</title>
+    <title>SPA-Рай • Салон красоты и отдыха в Майкопе</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f4f7f4;
-            color: #4a534d;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F5F7F8;
+            color: #2C3E50;
             line-height: 1.6;
         }
 
-        /* Навигация как на скрине */
-        nav {
+        /* Шапка и Навигация */
+        header {
+            background-color: #FFFFFF;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: #f4f7f4;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.4rem;
+        .logo h2 {
+            color: #0A7E8C;
             letter-spacing: 2px;
-            color: #7fa99b;
+            font-weight: 600;
         }
 
-        .nav-links a {
+        nav a {
             text-decoration: none;
-            color: #6c757d;
-            font-size: 1rem;
+            color: #5A738E;
+            margin-left: 25px;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #7fa99b;
+        nav a:hover {
+            color: #0A7E8C;
         }
 
-        /* Главный блок в точности по макету */
+        /* Главный баннер (Hero) */
         .hero {
+            background-color: #E6F2F4;
+            padding: 60px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             max-width: 1200px;
-            margin: 20px auto 60px;
-            padding: 60px 4%;
-            background: linear-gradient(135deg, #eef5f0 0%, #e3ede6 100%);
-            border-radius: 30px;
-            gap: 40px;
+            margin: 30px auto;
+            border-radius: 20px;
         }
 
-        .hero-content {
+        .hero-text {
             flex: 1;
-            max-width: 600px;
+            padding-right: 40px;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            color: #3c4841;
+        .hero-text h1 {
+            font-size: 38px;
+            color: #1A4B50;
             line-height: 1.2;
-            margin-bottom: 25px;
-            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #707b73;
-            margin-bottom: 35px;
-            max-width: 500px;
+        .hero-text p {
+            font-size: 18px;
+            color: #5A738E;
+            margin-bottom: 30px;
         }
 
-        /* Та самая голубая скругленная кнопка */
-        .btn-call {
+        .btn-cta {
             display: inline-block;
-            background-color: #2cb1bc;
-            color: #fff;
-            padding: 15px 40px;
+            background-color: #0A7E8C;
+            color: #FFFFFF;
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 30px;
             font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(44, 177, 188, 0.3);
+            box-shadow: 0 4px 15px rgba(10,126,140,0.3);
             transition: transform 0.3s, background-color 0.3s;
         }
 
-        .btn-call:hover {
-            background-color: #228e97;
+        .btn-cta:hover {
+            background-color: #086671;
             transform: translateY(-2px);
         }
 
-        /* Блок с вертикальной картинкой девушки справа */
         .hero-image {
             flex: 1;
-            display: flex;
-            justify-content: flex-end;
+            text-align: right;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 420px;
-            height: 550px;
-            object-fit: cover;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Стилизация нежного прайс-листа */
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
+        /* Блок услуг и цен */
+        .services-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        .section-title {
+        .services-section h2 {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            color: #3c4841;
-        }
-
-        .price-list {
-            list-style: none;
-            margin-bottom: 60px;
-        }
-
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 20px;
-            font-size: 1.15rem;
-        }
-
-        .price-name {
-            background-color: #f4f7f4;
-            padding-right: 15px;
-            color: #4a534d;
-        }
-
-        .price-dots {
-            flex-grow: 1;
-            border-bottom: 2px dotted #b8c6be;
-            margin: 0 10px;
+            color: #1A4B50;
+            margin-bottom: 40px;
+            font-size: 28px;
             position: relative;
-            top: -4px;
         }
 
-        .price-cost {
-            background-color: #f4f7f4;
-            paddi
-
-
-ng-left: 15px;
-            font-weight: bold;
-            color: #3c4841;
+        .services-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0A7E8C;
+            margin: 10px auto 0;
+            border-radius: 20px;
         }
 
-        /* Контакты */
-        .contacts {
-            background-color: #e3ede6;
-            color: #3c4841;
-            text-align: center;
-            border-radius: 30px;
-            padding: 50px;
-            margin-top: 60px;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .contacts h2 {
+        .service-card {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid #0A7E8C;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1A4B50;
+
+
+margin-bottom: 5px;
+            font-size: 19px;
+        }
+
+        .service-card .duration {
+            font-size: 13px;
+            color: #A0B2C6;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6A7B8C;
+            font-size: 14px;
             margin-bottom: 20px;
         }
 
-        .contacts p {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+        .service-card .price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0A7E8C;
+            display: block;
+            margin-top: auto;
         }
 
-        .contacts a {
-            color: #2cb1bc;
+        /* Блок галереи */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            color: #1A4B50;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        max-width: 900px {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        max-width: 600px {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: 250px; 
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Подвал (Контакты) */
+        footer {
+            background-color: #1A4B50;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            color: #B3D1D4;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        footer p a {
+            color: #FFFFFF;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.4rem;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #909a93;
-            font-size: 0.95rem;
-            margin-top: 60px;
-            border-top: 1px solid #e3ede6;
+        footer p a:hover {
+            text-decoration: underline;
         }
 
-        max-width: 992px {
-            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
-            .hero-image { justify-content: center; }
-            .hero-image img { height: 400px; }
-            .hero-content p { margin: 0 auto 30px; }
-        }
-
-        max-width: 768px {
-            .price-item { flex-direction: column; align-items: flex-start; margin-bottom: 25px; }
-            .price-dots { display: none; }
-            .price-name { padding-right: 0; }
-            .price-cost { padding-left: 0; margin-top: 5px; }
+        .footer-credits {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #709A9E;
+            border-top: 1px solid #245D63;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">SPA-РАЙ</div>
-        <div class="nav-links"><a href="#prices">Услуги и цены</a></div>
-    </nav>
+    <header>
+        <div class="logo">
+            <h2>SPA-РАЙ</h2>
+        </div>
+        <nav>
+            <a href="#services">Услуги и цены</a>
+            <a href="#gallery">Интерьер</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-text">
             <h1>Погрузитесь в атмосферу полного блаженства и ухода</h1>
             <p>Уютный спа-салон в Майкопе. Подарите себе идеальный отдых, расслабляющие массажи, водные процедуры и заботу о теле в шаговой доступности от дома.</p>
-            <a href="#prices" class="btn-call">Записаться на сеанс</a>
+            <a href="#contacts" class="btn-cta">Записаться на сеанс</a>
         </div>
         <div class="hero-image">
-            <img src="1000012264.jpg" alt="Спа уход">
+            <img src="girl.jpg" alt="Расслабление в SPA-Рай">
         </div>
     </section>
 
-    <div class="container" id="prices">
-        <h2 class="section-title">Наше меню услуг</h2>
-        
-        <ul class="price-list">
-            <li class="price-item">
-                <span class="price-name">Подводный душ-массаж, 40 мин</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">1 400 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Антицеллюлитный массаж, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Бассейн, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">500 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Аренда спа-зоны (хаммам, сауна, бассейн), 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Стоун-терапия, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Классический массаж, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">1 800 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Спортивный массаж, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Пилинг рукавичкой Кесе и пенный ма
+    <section class="services-section" id="services">
+        <h2>Наш прайс-лист</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div>
+                    <h3>Посещение бассейна</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Чистый, освежающий и комфортный бассейн для полноценного отдыха и плавания.</p>
+                </div>
+                <span class="price">500 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Подводный душ-массаж</h3>
 
 
-ссаж, 25 мин</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">1 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Обертывание (1 шт.)</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">5 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Массаж травяными мешочками, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Медовый массаж, 1 ч</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">2 000 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Скраб в хаммаме, 25 мин</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">1 200 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Массаж спины, 30 мин</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">800 ₽</span>
-            </li>
-            <li class="price-item">
-                <span class="price-name">Пилинг тела</span>
-                <span class="price-dots"></span>
-                <span class="price-cost">1 500 ₽</span>
-            </li>
-        </ul>
+<span class="duration">⏱ Время: 40 минут</span>
+                    <p>Эффективный лечебный гидромассаж, улучшающий тонус мышц и общее самочувствие.</p>
+                </div>
+                <span class="price">1 400 ₽</span>
+            </div>
 
-        <section class="contacts">
-            <h2>Ждем вас в гости</h2>
-            <p>Адрес: г. Майкоп, Привокзальная ул., 413</p>
-            <p>Телефон для записи:</p>
-            <p><a href="tel:+79529777563">+7 (952) 977-75-63</a></p>
-        </section>
-    </div>
+            <div class="service-card">
+                <div>
+                    <h3>Аренда спа-зоны</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Полное уединение для вашей компании: расслабляющий хаммам, финская сауна и бассейн.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 SPA-Рай Майкоп. Все права защищены.</p>
+            <div class="service-card">
+                <div>
+                    <h3>Пилинг рукавичкой Кесе</h3>
+                    <span class="duration">⏱ Время: 25 минут</span>
+                    <p>Глубокое очищение и обновление кожи в сочетании с нежным и ароматным пенным массажем.</p>
+                </div>
+                <span class="price">1 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Массаж травяными мешочками</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Мягкое и глубокое прогревание тела мешочками со специальными натуральными травами.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Антицеллюлитный массаж</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Интенсивная проработка проблемных зон для моделирования контуров тела и гладкости кожи.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Стоунтерапия</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Уникальный расслабляющий массаж гладкими горячими камнями для снятия стресса.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Классический массаж</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Традиционный общий массаж всего тела для снятия зажимов, усталости и восстановления сил.</p>
+                </div>
+                <span class="price">1 800 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Медовый массаж</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Питательный массаж с использованием натурального меда для детокса и бархатистости кожи.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Спортивный массаж</h3>
+                    <span class="duration">⏱ Время: 1 час</span>
+                    <p>Глубокая проработка мышц для восстановления после физических нагрузок и снятия напряжения.</p>
+                </div>
+                <span class="price">2 000 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Массаж спины</h3>
+                    <span class="duration">⏱ Время: 30 минут</span>
+                    <p>Локальный оздоровительный массаж спины и шейно-воротниковой зоны для снятия зажимов.</p>
+                </div>
+                <span class="price">800 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Скраб в хаммаме</h3>
+                    <span class="duration">⏱ Время: 25 минут</span>
+                    <p>Деликатное очищение кожи натуральным скрабом в условиях мягкого тепла хаммама.</p>
+                </div>
+
+
+<span class="price">1 200 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Пилинг тела</h3>
+                    <span class="duration">⏱ Время: Не указано</span>
+                    <p>Профессиональное отшелушивание, улучшающее микроциркуляцию и обновляющее кожу.</p>
+                </div>
+                <span class="price">1 500 ₽</span>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h3>Обертывание</h3>
+                    <span class="duration">⏱ Количество: 1 шт.</span>
+                    <p>Интенсивный уход за кожей тела для глубокого питания, увлажнения и детокс-эффекта.</p>
+                </div>
+                <span class="price">5 000 ₽</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <h2>Атмосфера нашего салона</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="pool.jpg" alt="Бассейн SPA-Рай">
+            </div>
+            <div class="gallery-item">
+                <img src="hall.jpg" alt="Холл и зона ожидания SPA-Рай">
+            </div>
+            <div class="gallery-item">
+                <img src="corridor.jpg" alt="Просторный коридор с пальмами">
+            </div>
+            <div class="gallery-item">
+                <img src="lounge.jpg" alt="Уютная зона отдыха с диваном">
+            </div>
+            <div class="gallery-item">
+                <img src="window.jpg" alt="Атмосферное окно у бассейна">
+            </div>
+            <div class="gallery-item">
+                <img src="details.jpg" alt="Атмосферные детали: травяные мешочки и свечи">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <h3>СПА-салон «SPA-Рай»</h3>
+        <p>📍 Адрес: г. Майкоп, Привокзальная ул., д. 413</p>
+        <p>📞 Телефон для записи: <a href="tel:+79529777563">+7 (952) 977-75-63</a></p>
+        <p>⏰ Режим работы: Открыто ежедневно, до 23:00</p>
+        <div class="footer-credits">
+            <p>&copy; 2026 Сайт разработан локальным веб-мастером. Все права защищены.</p>
+        </div>
     </footer>
 
 </body>
 </html>
+
+
+
 
 
 
