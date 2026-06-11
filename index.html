@@ -60,7 +60,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: auto;
             padding: 60px 20px;
         }
@@ -110,59 +110,42 @@
             transform: scale(1.03);
         }
 
-        .price-category {
-            background: #fff;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-        }
-
-        .category-title {
-            font-size: 1.6rem;
-            color: #d4a373;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #f0eae4;
-            padding-bottom: 10px;
+        .price-list {
+            list-style: none;
+            margin-bottom: 40px;
         }
 
         .price-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px dashed #f0eae4;
-        }
-
-        .price-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-info h3 {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 4px;
-        }
-
-        .item-info span {
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        .item-cost {
+            align-items: baseline;
+            margin-bottom: 15px;
             font-size: 1.2rem;
+        }
+
+        .price-name {
+            background-color: #f7f5f2;
+            padding-right: 10px;
+        }
+
+        .price-dots {
+            flex-grow: 1;
+            border-bottom: 2px dashed #d4a373;
+            margin: 0 10px;
+            position: relative;
+            top: -4px;
+        }
+
+        .price-cost {
+            background-color: #f7f5f2;
+            padding-left: 10px;
             font-weight: bold;
             color: #5c5552;
-            white-space: nowrap;
-            margin-left: 15px;
         }
 
         .contacts {
             background-color: #e3d5ca;
-            colo
-
-
-r: #5c5552;
+            color: #5c5552;
             text-align: center;
             border-radius: 20px;
             padding: 40px;
@@ -180,7 +163,9 @@ r: #5c5552;
         }
 
         footer {
-            text-align: center;
+
+
+text-align: center;
             padding: 30px;
             color: #999;
             font-size: 0.9rem;
@@ -191,8 +176,10 @@ r: #5c5552;
         max-width: 768px {
             header h1 { font-size: 2.5rem; }
             header p { font-size: 1.2rem; }
-            .price-item { flex-direction: column; align-items: flex-start; }
-            .item-cost { margin-left: 0; margin-top: 8px; }
+            .price-item { flex-direction: column; align-items: flex-start; margin-bottom: 20px; }
+            .price-dots { display: none; }
+            .price-name { padding-right: 0; }
+            .price-cost { padding-left: 0; margin-top: 5px; }
         }
     </style>
 </head>
@@ -221,125 +208,87 @@ r: #5c5552;
 
         <section id="prices">
             <h2 class="section-title">Наше меню услуг</h2>
+            
+            <ul class="price-list">
+                <li class="price-item">
+                    <span class="price-name">Аренда спа-зоны (хаммам, сауна, бассейн), 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Бассейн, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">500 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">SPA-программы</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">3 500 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Классический массаж, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">1 800 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Спортивный массаж, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Антицеллюлитный массаж, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Массаж травяными мешочками, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Медовый массаж, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Стоун-терапия, 1 ч</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">2 000 ₽</span>
+                </li>
+                <li class="price-item"
 
-            <div class="price-category">
-                <div class="category-title">SPA-зоны и комплексы</div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Аренда спа-зоны (хаммам, сауна, бассейн)</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Бассейн</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">500 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>SPA-программы (Уходы для тела)</h3>
-                        <span>Комплексный расслабляющий уход</span>
-                    </div>
-                    <div class="item-cost">3 500 ₽</div>
-                </div>
-            </div>
 
-            <div class="price-category">
-                <div class="category-title">Массажное отделение</div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Классический массаж</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">1 800 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Спортивный массаж</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Антицеллюлитный массаж</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-
-
-</div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Массаж травяными мешочками</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Медовый массаж</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Стоун-терапия (массаж горячими камнями)</h3>
-                        <span>Продолжительность: 1 час</span>
-                    </div>
-                    <div class="item-cost">2 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Массаж спины</h3>
-                        <span>Продолжительность: 30 минут</span>
-                    </div>
-                    <div class="item-cost">800 ₽</div>
-                </div>
-            </div>
-
-            <div class="price-category">
-                <div class="category-title">Водные процедуры, пилинги и обертывания</div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Подводный душ-массаж</h3>
-                        <span>Продолжительность: 40 минут</span>
-                    </div>
-                    <div class="item-cost">1 400 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Пилинг рукавичкой Кесе и пенный массаж</h3>
-                        <span>Продолжительность: 25 минут</span>
-                    </div>
-                    <div class="item-cost">1 000 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Скраб в хаммаме</h3>
-                        <span>Продолжительность: 25 минут</span>
-                    </div>
-                    <div class="item-cost">1 200 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Пилинг тела</h3>
-                        <span>Глубокое очищение и обновление кожи</span>
-                    </div>
-                    <div class="item-cost">1 500 ₽</div>
-                </div>
-                <div class="price-item">
-                    <div class="item-info">
-                        <h3>Обертывание</h3>
-                        <span>Питание и детокс кожи (1 шт.)</span>
-                    </div>
-                    <div class="item-cost">5 000 ₽</div>
-                </div>
-            </div>
+>
+                    <span class="price-name">Массаж спины, 30 мин</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">800 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Подводный душ-массаж, 40 мин</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">1 400 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Пилинг рукавичкой Кесе и пенный массаж, 25 мин</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">1 000 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Скраб в хаммаме, 25 мин</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">1 200 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Пилинг тела</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">1 500 ₽</span>
+                </li>
+                <li class="price-item">
+                    <span class="price-name">Обертывание (1 шт.)</span>
+                    <span class="price-dots"></span>
+                    <span class="price-cost">5 000 ₽</span>
+                </li>
+            </ul>
         </section>
 
         <section id="contacts" class="contacts">
