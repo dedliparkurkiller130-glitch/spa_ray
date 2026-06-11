@@ -13,19 +13,18 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #F5F7F8;
-            color: #2C3E50;
+            background-color: #F9F9F9;
+            color: #333333;
             line-height: 1.6;
         }
 
-        /* Шапка и Навигация */
         header {
             background-color: #FFFFFF;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #EEEEEE;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -33,15 +32,15 @@
 
         .logo h2 {
             color: #0A7E8C;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
         }
 
         nav a {
             text-decoration: none;
-            color: #5A738E;
-            margin-left: 25px;
-            font-weight: 500;
+            color: #666666;
+            margin-left: 20px;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -49,16 +48,16 @@
             color: #0A7E8C;
         }
 
-        /* Главный баннер (Hero) с мягким премиум-оттенком */
+        /* Главный баннер */
         .hero {
-            background: linear-gradient(135deg, #eef5f0 0%, #e3ede6 100%);
+            background-color: #EBF3F5;
             padding: 60px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             max-width: 1200px;
             margin: 30px auto;
-            border-radius: 30px;
+            border-radius: 20px;
         }
 
         .hero-text {
@@ -67,33 +66,31 @@
         }
 
         .hero-text h1 {
-            font-size: 38px;
+            font-size: 36px;
             color: #1A4B50;
-            line-height: 1.2;
+            line-height: 1.3;
             margin-bottom: 20px;
         }
 
         .hero-text p {
-            font-size: 18px;
-            color: #5A738E;
+            font-size: 16px;
+            color: #666666;
             margin-bottom: 30px;
         }
 
         .btn-cta {
             display: inline-block;
-            background-color: #2cb1bc;
+            background-color: #0A7E8C;
             color: #FFFFFF;
-            padding: 15px 35px;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(44, 177, 188, 0.3);
-            transition: transform 0.3s, background-color 0.3s;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
 
         .btn-cta:hover {
-            background-color: #228e97;
-            transform: translateY(-2px);
+            background-color: #086671;
         }
 
         .hero-image {
@@ -104,97 +101,137 @@
         .hero-image img {
             width: 100%;
             max-width: 400px;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* Блок услуг и цен */
-        .services-section {
+        /* О нашем центре + Сетка фоток */
+        .about-section {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
-        }
-
-        .services-section h2 {
             text-align: center;
+        }
+
+        .about-section h2 {
             color: #1A4B50;
-            margin-bottom: 40px;
             font-size: 28px;
-            position: relative;
-        }
-
-        .services-section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #0A7E8C;
-            margin: 10px auto 0;
-            border-radius: 20px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: #FFFFFF;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            border-left: 5px solid #0A7E8C;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .serv
-
-
-ice-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: #1A4B50;
-            margin-bottom: 5px;
-            font-size: 19px;
-        }
-
-        .service-card .duration {
-            font-size: 13px;
-            color: #A0B2C6;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #6A7B8C;
-            font-size: 14px;
             margin-bottom: 20px;
         }
 
-        .service-card .price {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0A7E8C;
-            display: block;
-            margin-top: auto;
+        .about-section p {
+            color: #666666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 15px;
         }
 
-        /* Блок галереи на 6 фото */
-        .gallery-section {
+        .about-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        max-width: 900px {
+            .about-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        max-width: 600px {
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-thumb {
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .about-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Меню услуг */
+        .menu-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+
+
+color: #1A4B50;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .category-block {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+        }
+
+        .category-block h3 {
+            color: #C89D7C;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #F5F5F5;
+            padding-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info h4 {
+            color: #333333;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .item-info .item-sub {
+            color: #999999;
+            font-size: 13px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: #333333;
+            font-size: 16px;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
+        /* Атмосфера нашего салона (Дополнительные 6 фото внизу) */
+        .bottom-gallery-section {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
         }
 
-        .gallery-section h2 {
+        .bottom-gallery-section h2 {
             text-align: center;
             color: #1A4B50;
             margin-bottom: 40px;
@@ -207,7 +244,6 @@ ice-card:hover {
             gap: 20px;
         }
 
-        /* Адаптация галереи для мобильных */
         max-width: 900px {
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -222,7 +258,7 @@ ice-card:hover {
         .gallery-item {
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             height: 250px; 
         }
 
@@ -237,7 +273,7 @@ ice-card:hover {
             transform: scale(1.05);
         }
 
-        /* Подвал (Контакты) */
+        /* Подвал */
         footer {
             background-color: #1A4B50;
             color: #FFFFFF;
@@ -247,25 +283,20 @@ ice-card:hover {
         }
 
         footer h3 {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 15px;
-            letter-spacing: 1px;
         }
 
         footer p {
             color: #B3D1D4;
-            margin-bottom: 12px;
-            font-size: 16px;
+            margin-bottom: 10px;
+            font-size: 15px;
         }
 
         footer p a {
             color: #FFFFFF;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        footer p a:hover {
-            text-decoration: underline;
         }
 
         .footer-credits {
@@ -292,174 +323,169 @@ ice-card:hover {
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Погрузитесь в атмосферу полного блаженства и ухода</h1>
+            <h1>Погрузитесь в атмосфере полного блаженства и ухода</h1>
             <p>Уютный спа-салон в Майкопе. Подарите себе идеальный отдых, расслабляющие массажи, водные процедуры и заботу о теле в шаговой доступности от дома.</p>
             <a href="#contacts" class="btn-cta">Записаться на сеанс</a>
         </div>
         <div class="hero-image">
-            <img src="girl.jpg" alt="Расслабление в SPA-Рай">
+
+
+<img src="girl.jpg" alt="Расслабление в SPA-Рай">
         </div>
     </section>
 
-    <section class="services-section" id="services">
-        <h2>Наш прайс-лист</h2>
-        <div class="services-grid">
+    <section class="about-section">
+        <h2>О нашем центре</h2>
+        <p>Добро пожаловать в «SPA-Рай» — место, где вы сможете полностью расслабиться, забыть о городской суете, восстановить силы и позаботиться о своем здоровье. Мы предлагаем профессиональные уходы, разнообразные виды массажа и уникальные водные процедуры.</p>
+        
+        <div class="about-gallery">
+            <div class="about-thumb"><img src="pool.jpg" alt="Интерьер SPA-Рай 1"></div>
+            <div class="about-thumb"><img src="hall.jpg" alt="Интерьер SPA-Рай 2"></div>
+            <div class="about-thumb"><img src="corridor.jpg" alt="Интерьер SPA-Рай 3"></div>
+            <div class="about-thumb"><img src="lounge.jpg" alt="Интерьер SPA-Рай 4"></div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="services">
+        <h2>Наше меню услуг</h2>
+
+        <div class="category-block">
+            <h3>SPA-зоны и комплексы</h3>
             
-            <div class="service-card">
-                <div>
-                    <h3>Посещение бассейна</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Чистый, освежающий и комфортный бассейн для полноценного отдыха и плавания.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Аренда спа-зоны (хаммам, сауна, бассейн)</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-
-
-<span class="price">500 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Подводный душ-массаж</h3>
-                    <span class="duration">⏱ Время: 40 минут</span>
-                    <p>Эффективный лечебный гидромассаж, улучшающий тонус мышц и общее самочувствие.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Бассейн</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">1 400 ₽</span>
+                <span class="item-price">500 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Аренда спа-зоны</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Полное уединение для вашей компании: расслабляющий хаммам, финская сауна и бассейн.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Подводный душ-массаж</h4>
+                    <span class="item-sub">Продолжительность: 40 минут</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">1 400 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Пилинг рукавичкой Кесе</h3>
-                    <span class="duration">⏱ Время: 25 минут</span>
-                    <p>Глубокое очищение и обновление кожи в сочетании с нежным и ароматным пенным массажем.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Пилинг рукавичкой Кесе и пенный массаж</h4>
+                    <span class="item-sub">Продолжительность: 25 минут</span>
                 </div>
-                <span class="price">1 000 ₽</span>
+                <span class="item-price">1 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Массаж травяными мешочками</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Мягкое и глубокое прогревание тела мешочками со специальными натуральными травами.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Скраб в хаммаме</h4>
+                    <span class="item-sub">Продолжительность: 25 минут</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">1 200 ₽</span>
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h3>Массажное отделение</h3>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Классический массаж</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
+                </div>
+                <span class="item-price">1 800 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Антицеллюлитный массаж</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Интенсивная проработка проблемных зон для моделирования контуров тела и гладкости кожи.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Спортивный массаж</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Стоунтерапия</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Уникальный расслабряющий массаж гладкими горячими камнями для снятия стресса.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Антицеллюлитный массаж</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Классический массаж</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Традиционный общий массаж всего тела для снятия зажимов, усталости и восстановления сил.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Стоунтерапия</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">1 800 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Медовый массаж</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Питательный массаж с использованием натурального меда для детокса и бархатистости кожи.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Массаж травяными мешочками</h4>
+                    <span
+
+
+class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Спортивный массаж</h3>
-                    <span class="duration">⏱ Время: 1 час</span>
-                    <p>Глубокая проработка мышц для восстановления после физических нагрузок и снятия напряжения.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Медовый массаж</h4>
+                    <span class="item-sub">Продолжительность: 1 час</span>
                 </div>
-                <span class="price">2 000 ₽</span>
+                <span class="item-price">2 000 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Массаж спины</h3>
-                    <span class="duration">⏱ Время: 30 минут</span>
-                    <p>Локальный оздоровительный массаж спины и шейно-воротниковой зоны для снятия зажимов.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Массаж спины</h4>
+                    <span class="item-sub">Продолжительность: 30 минут</span>
                 </div>
-                <span class="price">800 ₽</span>
+                <span class="item-price">800 ₽</span>
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h3>SPA-программы (Уходы для тела)</h3>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Пилинг тела</h4>
+                    <span class="item-sub">Профессиональное отшелушивание и обновление кожи</span>
+                </div>
+                <span class="item-price">1 500 ₽</span>
             </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>Скраб в хаммаме</h3>
-                    <span class
-
-
-="duration">⏱ Время: 25 минут</span>
-                    <p>Деликатное очищение кожи натуральным скрабом в условиях мягкого тепла хаммама.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h4>Обертывание</h4>
+                    <span class="item-sub">Количество: 1 шт.</span>
                 </div>
-                <span class="price">1 200 ₽</span>
+                <span class="item-price">5 000 ₽</span>
             </div>
-
-            <div class="service-card">
-                <div>
-                    <h3>Пилинг тела</h3>
-                    <span class="duration">⏱ Время: Не указано</span>
-                    <p>Профессиональное отшелушивание, улучшающее микроциркуляцию и обновляющее кожу.</p>
-                </div>
-                <span class="price">1 500 ₽</span>
-            </div>
-
-            <div class="service-card">
-                <div>
-                    <h3>Обертывание</h3>
-                    <span class="duration">⏱ Количество: 1 шт.</span>
-                    <p>Интенсивный уход за кожей тела для глубокого питания, увлажнения и детокс-эффекта.</p>
-                </div>
-                <span class="price">5 000 ₽</span>
-            </div>
-
         </div>
     </section>
 
-    <section class="gallery-section" id="gallery">
+    <section class="bottom-gallery-section" id="gallery">
         <h2>Атмосфера нашего салона</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="pool.jpg" alt="Бассейн SPA-Рай">
-            </div>
-            <div class="gallery-item">
-                <img src="hall.jpg" alt="Холл и зона ожидания SPA-Рай">
-            </div>
-            <div class="gallery-item">
-                <img src="corridor.jpg" alt="Просторный коридор с пальмами">
-            </div>
-            <div class="gallery-item">
-                <img src="lounge.jpg" alt="Уютная зона отдыха с диваном">
-            </div>
-            <div class="gallery-item">
-                <img src="window.jpg" alt="Атмосферное окно у бассейна">
-            </div>
-            <div class="gallery-item">
-                <img src="details.jpg" alt="Атмосферные детали: травяные мешочки и свечи">
-            </div>
+            <div class="gallery-item"><img src="pool.jpg" alt="Бассейн"></div>
+            <div class="gallery-item"><img src="hall.jpg" alt="Холл"></div>
+            <div class="gallery-item"><img src="corridor.jpg" alt="Коридор"></div>
+            <div class="gallery-item"><img src="lounge.jpg" alt="Зона отдыха"></div>
+            <div class="gallery-item"><img src="window.jpg" alt="Окно"></div>
+            <div class="gallery-item"><img src="details.jpg" alt="Детали"></div>
         </div>
     </section>
 
